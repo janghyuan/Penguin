@@ -44,6 +44,11 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :test do
+  gem 'minitest-reporters', '~> 1.1', '>= 1.1.11'
+  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.1'
+end
+
 group :production do
 	gem 'pg', '~> 0.18.4'
 end
