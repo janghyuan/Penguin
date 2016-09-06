@@ -8,6 +8,7 @@ class User < ApplicationRecord
 	validates :email, presence: true, length: { maximum: 255 }, email_format: { message: "is not looking good." }, 
 										uniqueness: { case_sensitive: false }
 
+	has_secure_password
 	private
 		def email_downcase
 			self.email.downcase!
