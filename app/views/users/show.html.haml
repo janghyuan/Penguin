@@ -1,10 +1,28 @@
 .row
 	.col-md-4
-		.panel.panel-default
+		.panel.panel-default.user-profile-card
 			.panel-body
 				.media
 					.media-left
-						Avatar Here
+						= gravatar_for @user, size: 90, class: "img-circle"
 					.media-body
-						= @user.name
+						.item.name
+							= @user.name
+						.item.gray
+							第
+							= @user.id
+							位会员
+							\/
+							= @user.created_at.localtime.to_s(:db)
+				.follow-info.row
+					.col-xs-4.followers
+						= link_to "12", "#", class: "counter"
+						= link_to "关注着", "#", class: "text"
+					.col-xs-4.following
+						= link_to "70", "#", class: "counter"
+						= link_to "正在关注", "#", class: "text"
+					.col-xs-4.stars
+						= link_to "8", "#", class: "counter"
+						= link_to "收藏", "#", class: "text"
+
 	.col-md-8
