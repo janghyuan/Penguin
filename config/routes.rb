@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # root 'application#hello'
   root 'pages#home'
 
+  resources :users
   # 用户注册
   get 'signup', to: 'users#new'
 end
