@@ -1,3 +1,14 @@
 - provide :title, "Sign Up"
-%h1 Users#new
-%p Find me in app/views/users/new.html.erb
+.row
+	.col-md-4.col-md-offset-8
+		.panel.panel-default
+			.panel-body
+				= simple_form_for @user, url: signup_url, defaults: { label: false, input_html: { class: "input-sm" } } do |f|
+					= f.input :name, placeholder: "USERNAME"
+					= f.input :email, placeholder: "EMAIL"
+					= f.input :password, placeholder: "PASSWORD"
+					= f.input :password_confirmation, placeholder: "CONFIRMATION"
+					= f.button :submit, class: "btn-sm btn-primary"
+
+#bg
+	= image_tag("tokyo.jpg", alt: "background image")

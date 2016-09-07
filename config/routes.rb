@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   resources :users
   # 用户注册
   get 'signup', to: 'users#new'
+  post 'signup', to: 'users#create'
 end
