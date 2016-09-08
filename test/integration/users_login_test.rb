@@ -39,5 +39,9 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
 		follow_redirect!
 		assert_select "a[href=?]", login_url
 		assert_select "a[href=?]", logout_url, count: 0
+
+		delete logout_url
+		follow_redirect!
+		assert_select "a[href=?]", login_url, count: 1
 	end
 end
