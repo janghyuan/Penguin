@@ -6,6 +6,10 @@
 				= simple_form_for :session, url: login_url, defaults: { label: false, input_html: { class: "input-sm" } } do |f|
 					= f.input :email, placeholder: "EMAIL"
 					= f.input :password, placeholder: "PASSWORD"
+					.checkbox
+						= f.label :remember_me do
+							= f.check_box :remember_me
+							%span Remember me on this computer
 					= f.button :submit, class: "btn-sm btn-primary"
 
 #bg
