@@ -14,4 +14,9 @@ Rails.application.routes.draw do
   # 用户注册
   get 'signup', to: 'users#new'
   post 'signup', to: 'users#create'
+
+  # 用户登录
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
 end
