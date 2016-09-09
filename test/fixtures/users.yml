@@ -11,3 +11,8 @@ michael:
   name: michael
   email: michael@gmail.com
   password_digest: <%= User.digest("foobar") %>
+
+archer:
+  name: archer
+  email: archer@gmail.com
+  password_digest: <%= User.digest("foobar") %>
