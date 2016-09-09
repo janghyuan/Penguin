@@ -20,10 +20,12 @@ class UsersEditTest < ActionDispatch::IntegrationTest
 	end
 
 	test "successful edit" do
-		log_in_as(@user)
 		get edit_user_url(@user)
+		log_in_as(@user)
+		assert_redirected_to edit_user_url(@user)
 		name = "foobar"
 		email = "foo@bar.com"
+		follow_redirect!
 		assert_template 'users/edit'
 		patch user_url(@user), params: {
 			user: {
