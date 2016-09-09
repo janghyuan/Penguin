@@ -1,0 +1,14 @@
+- provide :title, "All Users"
+
+.row
+	.col-md-8
+		.list-group
+			- @users.each do |user|
+				.list-group-item
+					.media
+						.media-left
+							= gravatar_for(user, size: 46, class: "img-rounded")
+						.media-body
+							%h4.media-heading
+								= user.name
+							= user.email

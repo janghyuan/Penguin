@@ -7,6 +7,7 @@
 			%li= link_to "Help", help_url
 			- if logged_in?
 				%li= link_to "#{current_user.name}", current_user
+				%li= link_to "Users", users_url
 				%li= link_to "Setting", edit_user_url(current_user)
 				%li= link_to "Logout", logout_url, method: :delete
 			- else
