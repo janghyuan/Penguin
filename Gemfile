@@ -32,6 +32,8 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'validates_email_format_of', '~> 1.6', '>= 1.6.3'
 gem 'simple_form', '~> 3.3', '>= 3.3.1'
 gem 'faker', '~> 1.6', '>= 1.6.6'
+gem 'will_paginate', '~> 3.1'
+gem 'bootstrap-will_paginate', '~> 0.0.10'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
