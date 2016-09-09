@@ -1,0 +1,8 @@
+.list-group-item
+	.media
+		.media-left
+			= gravatar_for(user, size: 46, class: "img-rounded")
+		.media-body
+			%h4.media-heading
+				= link_to user.name, user_url(user)
+			= user.email

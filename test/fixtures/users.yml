@@ -16,3 +16,10 @@ archer:
   name: archer
   email: archer@gmail.com
   password_digest: <%= User.digest("foobar") %>
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  name: <%= "user_#{n}" %>
+  email: <%= "user_#{n}@gmail.com" %>
+  password_digest: <%= User.digest("foobar") %>
+<% end %>
