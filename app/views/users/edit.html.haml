@@ -1,0 +1,12 @@
+- provide :title, "Update Profile"
+.row
+	.col-md-8
+		.panel.panel-default
+			.panel-body
+				= simple_form_for @user, defaults: { input_html: { class: "input-sm" } } do |f|
+					= f.input :name, placeholder: "USERNAME"
+					= f.input :email, placeholder: "EMAIL"
+					= f.input :password, placeholder: "PASSWORD"
+					= f.input :password_confirmation, placeholder: "CONFIRMATION"
+					= f.button :submit, class: "btn-sm btn-primary"
+

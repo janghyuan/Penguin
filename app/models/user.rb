@@ -8,7 +8,7 @@ class User < ApplicationRecord
 	# add_index :users, :email, unique: true
 	validates :email, presence: true, length: { maximum: 255 }, email_format: { message: "is not looking good." }, 
 										uniqueness: { case_sensitive: false }
-	validates :password, length: { minimum: 6 }, presence: true
+	validates :password, length: { minimum: 6 }, presence: true, allow_nil: true
 	has_secure_password
 
 	def remember
