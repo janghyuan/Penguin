@@ -1,6 +1,7 @@
 class User < ApplicationRecord
-	attr_accessor :remember_token
+	attr_accessor :remember_token, :activation_token
 	before_save :email_downcase
+	before_create :create_activation_digest
 	validates :name, presence: true, length: { in: 3..50 }
 	# email 的唯一性验证并不能做到数据库中的唯一
 	# 为此需要为数据库的 email 列添加索引，并为索引添加唯一性验证
@@ -35,5 +36,9 @@ class User < ApplicationRecord
 	private
 		def email_downcase
 			self.email.downcase!
+		end
+		def create_activation_digest
+			self.activation_token = User.new_token
+			self.activation_digest = User.digest(activation_token)
 		end
 end
