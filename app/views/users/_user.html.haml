@@ -6,3 +6,6 @@
 			%h4.media-heading
 				= link_to user.name, user_url(user)
 			= user.email
+		.media-right
+			- if current_user.admin? && (user != current_user)
+				= link_to "DELETE", user_url(user), method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-default'
