@@ -22,4 +22,7 @@ Rails.application.routes.draw do
 
   # 用户激活
   resources :account_activations, only: [:edit]
+
+  # 密码重设
+  resources :password_resets, only: [:new, :create, :edit, :update]
 end
